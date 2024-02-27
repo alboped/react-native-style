@@ -1,0 +1,10 @@
+{
+  "name": "@alboped/react-native-style",
+  "version": "1.0.0",
+  "description": "react-native 样式工具方法",
+  "main": "index.js",
+  "repository": "https://github.com/alboped/react-native-style.git",
+  "author": "shi_zhaojun@aliyun.com",
+  "license": "MIT",
+  "homepage": "https://github.com/alboped/react-native-style.git"
+}
