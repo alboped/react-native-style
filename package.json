@@ -1,6 +1,6 @@
 {
   "name": "@alboped/react-native-style",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react-native 样式工具方法",
   "main": "index.js",
   "repository": "https://github.com/alboped/react-native-style.git",
