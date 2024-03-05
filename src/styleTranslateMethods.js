@@ -5,7 +5,7 @@
 import { StyleSheet } from 'react-native';
 
 import { rpx, vh } from './screenUtil';
-import * as utils from '../utils';
+import * as utils from './utils';
 
 /* 自定义单位对应转换方法 */
 const unitFmtMap = { rpx, vh };
