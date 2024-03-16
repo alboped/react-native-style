@@ -38,6 +38,12 @@ var vh = function vh(height) {
 var isNumber = function isNumber(arg) {
   return /^(-|\+)?\d+(\.\d+)?$/.test(arg);
 };
+var isObject = function isObject(obj) {
+  return Object.prototype.toString.call(obj) === '[object Array]';
+};
+var isArray = function isArray(obj) {
+  return Array.isArray(obj);
+};
 
 var unitFmtMap = {
   rpx: rpx,
@@ -259,9 +265,9 @@ var styleMap = function styleMap(obj) {
 };
 var create = function create(styles) {
   var styleObj = {};
-  if (typeof styles === 'object') {
+  if (isObject(styles)) {
     styleObj = styleMap(styles);
-  } else if (Array.isArray(styles)) {
+  } else if (isArray(styles)) {
     styleObj = styles.map(function (style) {
       return styleMap(style);
     });

@@ -7,6 +7,7 @@
 import { StyleSheet } from 'react-native';
 
 import styleTranslateMethods from './styleTranslateMethods';
+import { isObject, isArray } from './utils';
 
 /**
  * 递归样式对象
@@ -48,9 +49,9 @@ const styleMap = obj => {
 const create = styles => {
   let styleObj = {};
 
-  if (typeof styles === 'object') {
+  if (isObject(styles)) {
     styleObj = styleMap(styles);
-  } else if (Array.isArray(styles)) {
+  } else if (isArray(styles)) {
     styleObj = styles.map(style => styleMap(style));
   }
 
