@@ -50,6 +50,8 @@ const create = styles => {
 
   if (typeof styles === 'object') {
     styleObj = styleMap(styles);
+  } else if (Array.isArray(styles)) {
+    styleObj = styles.map(style => styleMap(style));
   }
 
   return StyleSheet.create(styleObj);

@@ -1,8 +1,8 @@
-import create, { itemCreate } from './createStyle';
+import create from './createStyle';
 import { deviceWidth, deviceHeight, setBaseWidth, rpx } from './screenUtil';
 import { unit2Num as unitFmt } from './styleTranslateMethods';
 
-export { create, deviceWidth, deviceHeight, setBaseWidth, rpx, itemCreate, unitFmt };
+export { create, deviceWidth, deviceHeight, setBaseWidth, rpx, unitFmt };
 
 export default {
   create,
@@ -10,6 +10,5 @@ export default {
   deviceHeight,
   setBaseWidth,
   rpx,
-  itemCreate,
   unitFmt,
 };

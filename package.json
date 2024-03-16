@@ -1,10 +1,11 @@
 {
   "name": "@alboped/react-native-style",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "react-native 样式工具方法",
+  "source": "./src/index.js",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
-  "source": "./src/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/alboped/react-native-style.git",
   "author": "shi_zhaojun@aliyun.com",
   "license": "MIT",

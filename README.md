@@ -143,16 +143,6 @@ RN自带的样式写法不支持像css那样的简写，使用createStyle可以�
 }
 ```
 
-### itemCreate(options: Object)：创建单个样式
-创建单个样式
-```js
-const viewStyle = Style.itemCreate({
-  width: '100rpx',
-});
-
-<View style={viewStyle}></View>
-```
-
 ### .rpx(value: Number)：转换尺寸
 将设计稿尺寸转换为实际尺寸；
 如果在`create`之外定义样式，需要手动转换尺寸，可以使用`Style.rpx()`方法；
