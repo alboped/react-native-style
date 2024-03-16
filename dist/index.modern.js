@@ -39,7 +39,7 @@ var isNumber = function isNumber(arg) {
   return /^(-|\+)?\d+(\.\d+)?$/.test(arg);
 };
 var isObject = function isObject(obj) {
-  return Object.prototype.toString.call(obj) === '[object Array]';
+  return Object.prototype.toString.call(obj) === '[object Object]';
 };
 var isArray = function isArray(obj) {
   return Array.isArray(obj);

@@ -2,7 +2,7 @@
 export const isNumber = arg => /^(-|\+)?\d+(\.\d+)?$/.test(arg);
 
 /* 判断是否为对象 */
-export const isObject = obj => Object.prototype.toString.call(obj) === '[object Array]';
+export const isObject = obj => Object.prototype.toString.call(obj) === '[object Object]';
 
 /* 判断是否为数组 */
 export const isArray = obj => Array.isArray(obj);
