@@ -261,13 +261,12 @@ var create = function create(styles) {
   var styleObj = {};
   if (typeof styles === 'object') {
     styleObj = styleMap(styles);
+  } else if (Array.isArray(styles)) {
+    styleObj = styles.map(function (style) {
+      return styleMap(style);
+    });
   }
   return reactNative.StyleSheet.create(styleObj);
-};
-var itemCreate = function itemCreate(style) {
-  return create({
-    key: style
-  }).key;
 };
 
 var index = {
@@ -276,7 +275,6 @@ var index = {
   deviceHeight: deviceHeight,
   setBaseWidth: setBaseWidth,
   rpx: rpx,
-  itemCreate: itemCreate,
   unitFmt: unit2Num
 };
 
@@ -284,7 +282,6 @@ exports.create = create;
 exports.default = index;
 exports.deviceHeight = deviceHeight;
 exports.deviceWidth = deviceWidth;
-exports.itemCreate = itemCreate;
 exports.rpx = rpx;
 exports.setBaseWidth = setBaseWidth;
 exports.unitFmt = unit2Num;

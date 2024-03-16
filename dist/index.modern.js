@@ -261,13 +261,12 @@ var create = function create(styles) {
   var styleObj = {};
   if (typeof styles === 'object') {
     styleObj = styleMap(styles);
+  } else if (Array.isArray(styles)) {
+    styleObj = styles.map(function (style) {
+      return styleMap(style);
+    });
   }
   return StyleSheet.create(styleObj);
-};
-var itemCreate = function itemCreate(style) {
-  return create({
-    key: style
-  }).key;
 };
 
 var index = {
@@ -276,10 +275,9 @@ var index = {
   deviceHeight: deviceHeight,
   setBaseWidth: setBaseWidth,
   rpx: rpx,
-  itemCreate: itemCreate,
   unitFmt: unit2Num
 };
 
 export default index;
-export { create, deviceHeight, deviceWidth, itemCreate, rpx, setBaseWidth, unit2Num as unitFmt };
+export { create, deviceHeight, deviceWidth, rpx, setBaseWidth, unit2Num as unitFmt };
 //# sourceMappingURL=index.modern.js.map
