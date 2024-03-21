@@ -17,6 +17,8 @@ import { isObject, isArray } from './utils';
 const styleMap = obj => {
   let styleObj = {};
 
+  if (!obj) return obj;
+
   Object.keys(obj).forEach(key => {
     const item = obj[key];
 

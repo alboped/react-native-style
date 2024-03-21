@@ -244,6 +244,7 @@ var styleTranslateMethods = [parseMargin, parsePadding, parseBorderRadius, parse
 
 var styleMap = function styleMap(obj) {
   var styleObj = {};
+  if (!obj) return obj;
   Object.keys(obj).forEach(function (key) {
     var item = obj[key];
     if (typeof item === 'object') {
