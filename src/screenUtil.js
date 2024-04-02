@@ -41,16 +41,18 @@ export const rpx = width => {
     return 0;
   }
 
+  const hairlineWidth = StyleSheet.hairlineWidth;
+
   // 1 直接返回 hairlineWidth
   if (Math.abs(width) === 1) {
-    return StyleSheet.hairlineWidth * (width > 0 ? 1 : -1);
+    return hairlineWidth * (width > 0 ? 1 : -1);
   }
 
   const actualWidth = w_pixelScale * width;
 
   // 计算结果小于 hairlineWidth 则返回 hairlineWidth
   if (Math.abs(actualWidth) <= hairlineWidth) {
-    return StyleSheet.hairlineWidth * (width > 0 ? 1 : -1);
+    return hairlineWidth * (width > 0 ? 1 : -1);
   }
 
   return Math.floor(actualWidth);

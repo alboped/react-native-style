@@ -28,12 +28,13 @@ var rpx = function rpx(width) {
   if (width === 0) {
     return 0;
   }
+  var hairlineWidth = StyleSheet.hairlineWidth;
   if (Math.abs(width) === 1) {
-    return StyleSheet.hairlineWidth * (width > 0 ? 1 : -1);
+    return hairlineWidth * (width > 0 ? 1 : -1);
   }
   var actualWidth = w_pixelScale * width;
   if (Math.abs(actualWidth) <= hairlineWidth) {
-    return StyleSheet.hairlineWidth * (width > 0 ? 1 : -1);
+    return hairlineWidth * (width > 0 ? 1 : -1);
   }
   return Math.floor(actualWidth);
 };
