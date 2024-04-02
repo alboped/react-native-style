@@ -25,10 +25,16 @@ var setBaseWidth = function setBaseWidth(width) {
   w_pixelScale = deviceWidth / width;
 };
 var rpx = function rpx(width) {
-  if (width === 0) return 0;
-  if (Math.abs(width) === 1) return StyleSheet.hairlineWidth * (width > 0 ? 1 : -1);
+  if (width === 0) {
+    return 0;
+  }
+  if (Math.abs(width) === 1) {
+    return StyleSheet.hairlineWidth * (width > 0 ? 1 : -1);
+  }
   var actualWidth = w_pixelScale * width;
-  if (Math.abs(actualWidth) < 0) return width > 0 ? 1 : -1;
+  if (Math.abs(actualWidth) <= hairlineWidth) {
+    return StyleSheet.hairlineWidth * (width > 0 ? 1 : -1);
+  }
   return Math.floor(actualWidth);
 };
 var vh = function vh(height) {

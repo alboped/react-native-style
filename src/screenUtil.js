@@ -37,11 +37,21 @@ export const setBaseWidth = width => {
  * @return {Number}       实际像素
  */
 export const rpx = width => {
-  if (width === 0) return 0;
-  if (Math.abs(width) === 1) return StyleSheet.hairlineWidth * (width > 0 ? 1 : -1);
+  if (width === 0) {
+    return 0;
+  }
+
+  // 1 直接返回 hairlineWidth
+  if (Math.abs(width) === 1) {
+    return StyleSheet.hairlineWidth * (width > 0 ? 1 : -1);
+  }
 
   const actualWidth = w_pixelScale * width;
-  if (Math.abs(actualWidth) < 0) return width > 0 ? 1 : -1;
+
+  // 计算结果小于 hairlineWidth 则返回 hairlineWidth
+  if (Math.abs(actualWidth) <= hairlineWidth) {
+    return StyleSheet.hairlineWidth * (width > 0 ? 1 : -1);
+  }
 
   return Math.floor(actualWidth);
 };
